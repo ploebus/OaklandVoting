@@ -10,12 +10,12 @@
   <![endif]-->
   <style>
     body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
+    #theMap { position:absolute; top:0; bottom:0; width:100%; }
   </style>
 </head>
 <body>
 <style>
-#map-ui {
+#theMap-ui {
     position: absolute;
     top: 75px;
     left: 10px;
@@ -25,7 +25,7 @@
     z-index: 100;
 }
  
-#map-ui a {
+#theMap-ui a {
     font: normal 13px/18px 'Helvetica Neue', Helvetica, sans-serif;
     background: #FFF;
     color: #3C4E5A;
@@ -39,22 +39,22 @@
     text-decoration: none;
 }
  
-#map-ui a:hover {
+#theMap-ui a:hover {
     background: #ECF5FA;
 }
  
-#map-ui li:last-child a {
+#theMap-ui li:last-child a {
     border-bottom-width: 1px;
     -webkit-border-radius: 0 0 3px 3px;
     border-radius: 0 0 3px 3px;
 }
  
-#map-ui li:first-child a {
+#theMap-ui li:first-child a {
     -webkit-border-radius: 3px 3px 0 0;
     border-radius: 3px 3px 0 0;
 }
  
-#map-ui a.active {
+#theMap-ui a.active {
     background: #3887BE;
     border-color: #3887BE;
     border-top-color: #FFF;
@@ -62,7 +62,7 @@
 }
 </style>
 <ul id='map-ui'></ul>
-<div id='map'></div>
+<div id='theMap'></div>
 <script type='text/javascript'>
 //create map and open legend
 console.log('hello');
