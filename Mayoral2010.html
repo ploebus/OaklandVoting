@@ -72,16 +72,7 @@ console.log('here');
 map.addControl(L.mapbox.legendControl());
 console.log('there');
 
-map.on('layeradd',function(e){
-  if(e.layer.getTileJSON){
-   console.log('yo')
-    map.legendControl.addLegend(e.layer.getTileJSON().legend)
-    console.log('success!!!')
-  }
-  else{
-    console.log('error')
-  }
-});
+
 
 
 var ui = document.getElementById('map-ui');
@@ -100,7 +91,15 @@ function addLayer(layer, name, zIndex) {
     layer
         .setZIndex(zIndex)
         .addTo(map)
-        
+        .on('load',function(){
+          if(layer.getTileJSON){
+           console.log('yo')
+            map.legendControl.addLegend(ayer.getTileJSON().legend)
+            console.log('success!!!')
+          }
+          else{
+            console.log('error')
+          })
     //grab legends if available
     
     
