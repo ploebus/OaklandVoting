@@ -72,7 +72,7 @@ console.log('here');
 map.addControl(L.mapbox.legendControl());
 console.log('there');
 
-map.on('layeradd'),function(e){
+map.on('layeradd',function(e){
   if(e.layer.getTileJSON){
    console.log('yo')
     map.legendControl.addLegend(e.layer.getTileJSON().legend)
@@ -81,7 +81,7 @@ map.on('layeradd'),function(e){
   else{
     console.log('error')
   }
-}
+});
 
 
 var ui = document.getElementById('map-ui');
