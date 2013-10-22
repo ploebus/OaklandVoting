@@ -63,13 +63,17 @@
 </style>
 <ul id='map-ui'></ul>
 <div id='theMap'></div>
+<div id="legend">
+  
+  
+</div>
 <script type='text/javascript'>
 //create map and open legend
 console.log('hello');
 var map = L.map('theMap').setView([37.7869, -122.2121], 12);
 
 console.log('here');
-map.addControl(L.mapbox.legendControl());
+//map.addControl(L.mapbox.legendControl());
 console.log('there');
 
 
@@ -94,7 +98,9 @@ function addLayer(layer, name, zIndex) {
         .on('load',function(){
           if(layer.getTileJSON){
            console.log('yo');
-            map.legendControl.addLegend(layer.getTileJSON().legend);
+            //map.legendControl.addLegend(layer.getTileJSON().legend);
+            theLegend = document.getElementbyId("legend");
+            theLegend.innerHTML = layer.GetTileJSON.legend;
             console.log('success!!!');
           }
           
