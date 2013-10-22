@@ -93,13 +93,11 @@ function addLayer(layer, name, zIndex) {
         .addTo(map)
         .on('load',function(){
           if(layer.getTileJSON){
-           console.log('yo')
-            map.legendControl.addLegend(ayer.getTileJSON().legend)
-            console.log('success!!!')
+           console.log('yo');
+            map.legendControl.addLegend(layer.getTileJSON().legend);
+            console.log('success!!!');
           }
-          else{
-            console.log('error')
-          }
+          
           
           });
     //grab legends if available
