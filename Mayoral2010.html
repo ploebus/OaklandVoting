@@ -65,13 +65,13 @@
 <div id='map'></div>
 <script type='text/javascript'>
 var map = L.map('map').setView([37.7869, -122.2121], 12);
-map.addControl(L.map.legendControl());
+//map.addControl(L.map.legendControl());
 var ui = document.getElementById('map-ui');
 var legends=[];
  //adding layers to map
 addLayer(L.mapbox.tileLayer('ofurhe.map-448xuuy9'), 'Voter Turnout', 1);
-//addLayer(L.mapbox.tileLayer('ofurhe.MayoralCandidateVotes'), 'Mayoral Candidates', 2);
-//addLayer(L.mapbox.tileLayer('ofurhe.Votes_for_Quan'), 'Votes for Quan', 3);
+addLayer(L.mapbox.tileLayer('ofurhe.MayoralCandidateVotes'), 'Mayoral Candidates', 2);
+addLayer(L.mapbox.tileLayer('ofurhe.Votes_for_Quan'), 'Votes for Quan', 3);
 
 //TODO: grab layer legends
 //TODO: open map control
@@ -82,10 +82,7 @@ function addLayer(layer, name, zIndex) {
     layer
         .setZIndex(zIndex)
         .addTo(map)
-        .on('load',function(){
-          var TileJSON = layer.getTileJSON();
-          //console.log(TileJSON);
-        });
+        
     //grab legends if available
     
     
