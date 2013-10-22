@@ -84,7 +84,7 @@ function addLayer(layer, name, zIndex) {
         .addTo(map)
         .on('load',function(){
           var TileJSON = layer.getTileJSON();
-          
+          console.log(TileJSON);
         });
     //grab legends if available
     
