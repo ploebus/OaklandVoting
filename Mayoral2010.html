@@ -107,8 +107,8 @@ function addLayer(layer, name, zIndex) {
            console.log('yo');
             //map.legendControl.addLegend(layer.getTileJSON().legend);
             var theLegend = document.getElementById("legend");
-            console.log(layer.getTileJSON);
-            theLegend.innerHTML = layer.getTileJSON.legend;
+            console.log(layer.getTileJSON());
+            theLegend.innerHTML = layer.getTileJSON().legend;
             console.log('success!!!');
           }
           
