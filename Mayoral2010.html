@@ -72,10 +72,10 @@
   
 }
 </style>
-<div id="legend">
+
 <ul id='map-ui'></ul>
 <div id='theMap'></div>
-
+<div class='wax-legends'><div class='wax-legend'>legend content</div></div>
   
   
 </div>
@@ -83,7 +83,7 @@
 //create map and open legend
 console.log('hello');
 var map = L.map('theMap').setView([37.7869, -122.2121], 12);
-
+map.addControl()
 console.log('here');
 //map.addControl(L.mapbox.legendControl());
 console.log('there');
@@ -111,9 +111,10 @@ function addLayer(layer, name, zIndex) {
           if(layer.getTileJSON){
            console.log('yo');
             //map.legendControl.addLegend(layer.getTileJSON().legend);
-            var theLegend = document.getElementById("legend");
+           var legend = wax.mm.legend(map,layer.getTileJSON())
+           legend.appendTo(map._container);
             console.log(layer.getTileJSON());
-            theLegend.innerHTML = layer.getTileJSON().legend;
+            //theLegend.innerHTML = layer.getTileJSON().legend;
             console.log('success!!!');
           }
           
