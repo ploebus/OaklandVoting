@@ -60,6 +60,13 @@
     border-top-color: #FFF;
     color: #FFF;
 }
+#legend {
+  width:400px;
+  height:400px;
+  background:#fff;
+  
+  
+}
 </style>
 <ul id='map-ui'></ul>
 <div id='theMap'></div>
@@ -99,7 +106,8 @@ function addLayer(layer, name, zIndex) {
           if(layer.getTileJSON){
            console.log('yo');
             //map.legendControl.addLegend(layer.getTileJSON().legend);
-            theLegend = document.getElementById("legend");
+            var theLegend = document.getElementById("legend");
+            console.log(layer.getTileJSON);
             theLegend.innerHTML = layer.getTileJSON.legend;
             console.log('success!!!');
           }
